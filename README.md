@@ -57,8 +57,8 @@ email-sender-automation/
 │   └── config.py                   # Loads .env settings
 │
 ├── data/                           # Input files
-│   ├── contacts.csv                # Your recipient list
-│   └── template.html               # Your email body template
+│   ├── contacts.csv                # recipient list
+│   └── template.html               # email body template
 │
 ├── output/                         # Auto-generated on run (gitignored)
 │   ├── sent_log.csv                # Full delivery log

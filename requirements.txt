@@ -1,0 +1,5 @@
+pyinstaller
+setuptools wheel twine
+setup.py sdist bdist_wheel
+python-dotenv
+jinja2

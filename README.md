@@ -76,7 +76,7 @@ email-sender-automation/
 ├── pyproject.toml                  # Build system config
 ├── requirements.txt                # Python dependencies
 ├── setup.py                        # Package setup for PyPI
-└── README.md                       # Documention (This file)
+└── README.md                       # Documentation (This file)
 ```
 
 ---
@@ -92,8 +92,7 @@ email-sender-automation/
 1. **Clone the repository**
 
 ```bash
-git clone "URL"
-cd email_sender-automation
+pip install email-sender-automation
 ```
 
 2. **Install dependencies**
@@ -132,23 +131,19 @@ SENDER_PASSWORD=your_app_password_here
 
 ##  Usage
 
-1. Add your recipients to `contacts.csv`
-2. Edit your email body in `template.html`
-3. Run the script:
+```python
+from email_sender_automation import send_email
+
+send_email(
+    subject="Hello",
+    body="This is a test email",
+    recipients="recipient@example.com"
+)
+```
 
 ```bash
 python main.py
 ```
-
-You will be prompted to confirm before sending:
-
-```
-Recipients loaded: 5000
-Subject: Spring Sale is here!
-Send to all 500 recipients? (yes/no): yes
-```
-
-To retry only failed recipients from a previous run:
 
 ```bash
 python main.py --retry-failed
@@ -198,8 +193,21 @@ Failed saved to  : output/failed_recipients.csv
 
 ## 📄 License
 
-This project is licensed under the MIT License. See `LICENSE` for details.
+```
+MIT License
 
+Copyright (c) 2024 Anuja Khatri
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+```
 ---
 
 > Built with Python · smtplib · Jinja2 · python-dotenv

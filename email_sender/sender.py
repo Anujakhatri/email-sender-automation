@@ -4,7 +4,6 @@ from .config import EMAIL_USER, EMAIL_PASS
 def send_email(subject: str, body: str, recipients: str = None):
     """
     Send an email via Gmail SMTP.
-
     Parameters:
         subject (str): Subject of the email
         body (str): Body of the email

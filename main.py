@@ -1,14 +1,15 @@
 from email_sender.sender import send_email
 
-if __name__ == "__main__":
+def main():
+    """CLI entry point for email sender automation"""
+    print("Email Sender Automation")
+
+    # Example usage
     subject = "Test Email"
-    body = "It works!"
+    body = "This is a test project"
 
     # Send to yourself
     send_email(subject, body)
 
-    # Send to another user
-    send_email(subject, body, recipients="indukc261@gmail.com")
-
-    # we can send to multiple recipients like this
-    # send_email(subject, body, recipients=["friend1@gmail.com", "friend2@gmail.com"])
+if __name__ == "__main__":
+    main()

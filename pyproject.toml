@@ -1,3 +1,28 @@
 [build-system]
-requires =["setuptools", "wheel"]
+requires = ["setuptools>=40.8.0", "wheel"]
 build-backend = "setuptools.build_meta"
+
+[project]
+name = "email_sender_automation"
+version = "0.1.0"
+description = "email-sender-automation tools built with python"
+readme = "README.md"
+requires-python = ">=3.7"
+authors = [
+    {name= "Anuja Khatri", email = "khatrianuja@gmail.com"}
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+license = {text = "MIT"}
+
+[project.urls]
+Homepage = "https://github.com/Anujakhatri/email-sender-automation"
+
+[project.scripts]
+email-sender = "main:main"
+
+[tool.setuptools]
+packages = ["email_sender"]

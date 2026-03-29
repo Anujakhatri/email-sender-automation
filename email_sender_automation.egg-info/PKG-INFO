@@ -1,0 +1,228 @@
+Metadata-Version: 2.4
+Name: email_sender_automation
+Version: 0.1.0
+Summary: email-sender-automation tools built with python
+Author-email: Anuja Khatri <khatrianuja@gmail.com>
+License: MIT
+Project-URL: Homepage, https://github.com/Anujakhatri/email-sender-automation
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+# 📧 Email Sender Automation
+
+> Automated bulk email sender built with Python and SMTP. Features recipient management via CSV, dynamic HTML templates with personalisation, configurable send intervals, retry logic, and a full delivery report with success/failure tracking.
+
+---
+
+## 📌 Table of Contents
+
+- [About the Project](#about-the-project)
+- [Features](#features)
+- [Project Structure](#project-structure)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Usage](#usage)
+- [Output](#output)
+- [Example CSV](#example-csv)
+- [Example Email Template](#example-email-template)
+- [Error Handling](#error-handling)
+- [License](#license)
+
+---
+
+## 📖 About the Project
+
+This is a Python automation project that sends **bulk marketing emails** using the SMTP protocol. Instead of manually sending emails one by one, this tool reads a list of recipients from a CSV file, personalizes each email using an HTML template, and delivers them automatically — while logging every result.
+
+Built as part of a Python automation portfolio.
+
+---
+
+## ✨ Features
+
+- ✅ Send bulk emails to hundreds or thousands of recipients
+- ✅ Personalize each email using `{{name}}` placeholders
+- ✅ Read recipients from a CSV file
+- ✅ HTML email template support
+- ✅ Configurable delay between sends (avoid spam filters)
+- ✅ Retry logic for failed sends
+- ✅ Delivery summary printed to console
+- ✅ Full delivery log saved to `sent_log.csv`
+- ✅ Failed recipients saved to `failed_recipients.csv`
+- ✅ Credentials stored securely using `.env`
+
+---
+
+## 📁 Project Structure
+
+```
+email-sender-automation/
+│
+├── email_sender/                   # Core package
+│   ├── __init__.py                 # Makes this a Python package
+│   ├── sender.py                   # Core SMTP send logic
+│   ├── template_renderer.py        # Renders HTML template per recipient
+│   ├── logger.py                   # Logs sent/failed results to CSV
+│   └── config.py                   # Loads .env settings
+│
+├── data/                           # Input files
+│   ├── contacts.csv                # recipient list
+│   └── template.html               # email body template
+│
+├── output/                         # Auto-generated on run (gitignored)
+│   ├── sent_log.csv                # Full delivery log
+│   └── failed_recipients.csv       # Failed sends for re-run
+│
+├── tests/                          # Unit tests
+│   ├── test_sender.py
+│   └── test_template_renderer.py
+│
+├── main.py                         # Entry point — runs the automation
+├── .env                            # SMTP credentials (never commit this)
+├── .env.example                    # Example env file (safe to commit)
+├── .gitignore                      # Ignores .env, output/, __pycache__
+├── LICENSE                         # MIT License
+├── pyproject.toml                  # Build system config
+├── requirements.txt                # Python dependencies
+├── setup.py                        # Package setup for PyPI
+└── README.md                       # Documentation (This file)
+```
+
+---
+
+## ⚙️ Requirements
+
+- Python 3.8+
+- A Gmail account (or any SMTP provider)
+- Gmail App Password (if using Gmail with 2FA)
+
+## 🔧 Installation
+
+1. **Clone the repository**
+
+```bash
+pip install email-sender-automation
+```
+
+2. **Install dependencies**
+
+```bash
+pip install -r requirements.txt
+```
+
+3. **Set up your `.env` file**
+
+```bash
+cp .env.example .env
+```
+
+Then edit `.env` with your credentials:
+
+```env
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SENDER_EMAIL=you@gmail.com
+SENDER_PASSWORD=your_app_password_here
+```
+
+---
+
+## 🔐 Configuration
+
+| Variable | Description | Example |
+|---|---|---|
+| `SMTP_HOST` | Mail server address | `smtp.gmail.com` |
+| `SMTP_PORT` | SMTP port (TLS) | `587` |
+| `SENDER_EMAIL` | Your sending email | `you@gmail.com` |
+| `SENDER_PASSWORD` | App password or SMTP key | `xxxx xxxx xxxx xxxx` |
+
+---
+
+##  Usage
+
+```python
+from email_sender_automation import send_email
+
+send_email(
+    subject="Hello",
+    body="This is a test email",
+    recipients="recipient@example.com"
+)
+```
+
+```bash
+python main.py
+```
+
+```bash
+python main.py --retry-failed
+```
+
+---
+
+## 📊 Output
+
+After the run completes, you will see a summary in the terminal:
+
+```
+==================================
+   EMAIL DELIVERY SUMMARY
+==================================
+Total recipients : 5000
+Sent             : 4873
+Failed           : 127
+Success rate     : 97.5%
+Duration         : 4m 12s
+==================================
+Log saved to     : output/sent_log.csv
+Failed saved to  : output/failed_recipients.csv
+==================================
+```
+
+### sent_log.csv columns
+
+| timestamp | recipient | subject | status | error |
+|---|---|---|---|---|
+| 2025-03-24 09:00:03 | alice@example.com | Spring Sale! | SENT | |
+| 2025-03-24 09:00:05 | bad@@email.net | Spring Sale! | FAILED | SMTPRecipientsRefused |
+
+---
+
+
+## 🛡️ Error Handling
+
+| Error | What happens |
+|---|---|
+| Invalid email address | Logged as FAILED, skipped |
+| SMTP timeout | Retried up to 3 times |
+| Auth failure | Script stops immediately with a clear message |
+| Missing CSV column | Script stops immediately with a clear message |
+
+---
+
+## 📄 License
+
+```
+MIT License
+
+Copyright (c) 2024 Anuja Khatri
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+```
+---
+
+> Built with Python · smtplib · Jinja2 · python-dotenv

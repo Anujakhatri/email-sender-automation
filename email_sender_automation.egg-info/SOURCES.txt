@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+email_sender/__init__.py
+email_sender/config.py
+email_sender/logger.py
+email_sender/sender.py
+email_sender/template_renderer.py
+email_sender_automation.egg-info/PKG-INFO
+email_sender_automation.egg-info/SOURCES.txt
+email_sender_automation.egg-info/dependency_links.txt
+email_sender_automation.egg-info/entry_points.txt
+email_sender_automation.egg-info/top_level.txt

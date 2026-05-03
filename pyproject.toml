@@ -17,12 +17,16 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 license = {text = "MIT"}
+dependencies = [
+    "python-dotenv>=1.0.0",
+    "Jinja2>=3.1.0"
+]
 
 [project.urls]
 Homepage = "https://github.com/Anujakhatri/email-sender-automation"
 
 [project.scripts]
-email-sender = "main:main"
+email-sender = "email_sender.cli:main"
 
 [tool.setuptools]
 packages = ["email_sender"]

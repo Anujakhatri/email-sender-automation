@@ -1,6 +1,3 @@
-from .sender import send_email
+from email_sender.sender import send_email, run_bulk_send
 
-__version__ = "0.1.0"
-__author__ = "Anuja Khatri"
-
-__all__ = ["send_email"]
+__all__ = ['send_email', 'run_bulk_send']

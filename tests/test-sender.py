@@ -79,7 +79,7 @@ def test_auth_error_propagates(mock_smtp_cls):
     with pytest.raises(smtplib.SMTPAuthenticationError):
         send_email(
             subject="Test", body="<p>Hi</p>",
-            recipients="alice@example.com", **FAKE_CREDS,
+            recipients="backupemail-for-test@gmail.com", **FAKE_CREDS,
         )
 
 
@@ -88,7 +88,7 @@ def test_missing_credentials_raises():
     with pytest.raises(EnvironmentError, match="EMAIL_USER and EMAIL_PASS"):
         send_email(
             subject="Test", body="<p>Hi</p>",
-            recipients="alice@example.com",
+            recipients="backupemail-for-test@gmail.com",
             sender_email="",
             sender_password="",
         )

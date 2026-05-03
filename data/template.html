@@ -1,10 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Hello {{ name }}</title>
 </head>
-<body>
-
+<body style="font-family: Arial, sans-serif; color: #333; line-height: 1.6;">
+    <div style="max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #ddd; border-radius: 8px;">
+        <h2 style="color: #2c3e50;">Hello {{ name }}!</h2>
+        
+        <p>This is an automated message just to say hi.</p>
+        
+        <p>We hope everything is going wonderfully over at <strong>{{ company }}</strong>.</p>
+        
+        <p>If you have any questions, feel free to reply to this email.</p>
+        
+        <br>
+        <p>Best regards,</p>
+        <p><strong>The Automation Team</strong></p>
+    </div>
 </body>
 </html>

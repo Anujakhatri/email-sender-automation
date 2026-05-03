@@ -1,5 +1,16 @@
 pyinstaller
-python-dotenv
-jinja2
-build twine
-upgrade setuptools wheel twine
+# Loads secrets from your .env file
+python-dotenv>=1.0.0
+# HTML email templating
+Jinja2>=3.1.0
+
+# Run tests with:  pytest tests/ -v
+pytest>=7.0
+# Test coverage with:  pytest --cov=email_sender
+pytest-cov>=4.0
+# Build the PyPI package with:  python -m build
+build>=1.0
+# Upload to PyPI with:  twine upload dist/*
+twine>=4.0
+# Creates a standalone .exe (optional, for Windows distribution)
+# pyinstaller>=6.0

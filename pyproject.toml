@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "email_sender_automation"
-version = "0.1.0"
+version = "0.3.0"
 description = "email-sender-automation tools built with python"
 readme = "README.md"
 requires-python = ">=3.7"

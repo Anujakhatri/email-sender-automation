@@ -1,8 +1,20 @@
 # Contributing to Email Sender Automation
 
-Thank you for your interest in contributing! Here's how to get started.
+Thank you for your interest in contributing! I welcome all types of contributions, from bug reports to new features.
 
-## Development Setup
+---
+
+## 🐛 Reporting Bugs
+
+If you find a bug, please open an issue on GitHub and include:
+- A clear, descriptive title.
+- Steps to reproduce the bug.
+- What you expected to happen vs. what actually happened.
+- Your Python version and OS.
+
+## 🛠️ Development Setup
+
+Follow these steps to set up your local environment:
 
 ```bash
 # 1. Clone the repo
@@ -13,42 +25,48 @@ cd email-sender-automation
 python -m venv venv
 source venv/bin/activate  # Windows: venv\Scripts\activate
 
-# 3. Install with dev dependencies
+# 3. Install in editable mode with dev tools
 pip install -e ".[dev]"
 
-# 4. Set up environment
+# 4. Set up your environment variables
 cp .env.example .env
-# Edit .env with your SMTP credentials
+# Open .env and add your Gmail SMTP credentials
 ```
 
-## Running Tests
+## 🧪 Running Tests
+
+Always run tests before submitting a Pull Request to ensure everything works correctly:
 
 ```bash
+# Run all tests
 pytest tests/ -v
+
+# Run tests with coverage report
 pytest tests/ --cov=email_sender --cov-report=term-missing
 ```
 
-## Code Style
+## 📝 Code Style Guidelines
 
-- Follow PEP 8
-- Keep functions small and focused
-- Add docstrings to all public functions
-- Write tests for new features
+To keep the codebase clean and maintainable, please:
+- Follow **PEP 8** standards.
+- Keep functions small, focused, and well-named.
+- Add **docstrings** to all public functions and classes.
+- Ensure new features include corresponding **unit tests**.
 
-## Submitting a Pull Request
+## 🚀 Submitting a Pull Request
 
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/your-feature-name`
-3. Commit your changes: `git commit -m "feat: add your feature"`
-4. Push to your fork: `git push origin feature/your-feature-name`
-5. Open a Pull Request describing your changes
+1. **Fork** the repository.
+2. Create a **feature branch**: `git checkout -b feature/your-feature-name`.
+3. **Commit** your changes: `git commit -m "feat: add your feature"`.
+4. **Push** to your fork: `git push origin feature/your-feature-name`.
+5. Open a **Pull Request** and describe your changes in detail.
 
-## Commit Message Format
+## 💬 Commit Message Format
 
-Use [Conventional Commits](https://www.conventionalcommits.org/):
+We follow [Conventional Commits](https://www.conventionalcommits.org/):
 
-- `feat:` – new feature
-- `fix:` – bug fix
-- `docs:` – documentation only
-- `chore:` – tooling or config changes
-- `test:` – adding or updating tests
+- `feat:` – A new feature
+- `fix:` – A bug fix
+- `docs:` – Documentation changes
+- `chore:` – Tooling, config, or dependency updates
+- `test:` – Adding or updating tests

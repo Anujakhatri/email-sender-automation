@@ -4,3 +4,4 @@
 __pycache__
 graphify-out
 .vscode
+.DS_Store

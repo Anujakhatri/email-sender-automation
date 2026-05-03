@@ -45,8 +45,8 @@ pip install email-sender-automation
 Create a new folder for your email project. Inside that folder, create two sub-folders named `data` and `output`.
 
 ```bash
-mkdir my-email-project
-cd my-email-project
+mkdir email-sender
+cd email-sender
 mkdir data output
 ```
 
@@ -68,8 +68,8 @@ This file contains the **RECEIVERS** (the people getting the emails). Create a f
 Add this exact text inside `data/contacts.csv`:
 ```csv
 name,email,company
-Alice,alice@example.com,Acme Corp
-Bob,bob@example.com,Globex
+Alisa,alisa@example.com,ABC
+Bobin,bobin@example.com,XYZ
 ```
 *Note: The `email` column here is who receives the email.*
 

@@ -45,8 +45,8 @@ pip install email-sender-automation
 Create a new folder for your email project. Inside that folder, create two sub-folders named `data` and `output`.
 
 ```bash
-mkdir email-sender
-cd email-sender
+mkdir email-sender-automation
+cd email-sender-automation
 mkdir data output
 ```
 

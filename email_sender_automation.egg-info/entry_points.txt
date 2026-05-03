@@ -1,2 +1,2 @@
 [console_scripts]
-email-sender = main:main
+email-sender = email_sender.cli:main

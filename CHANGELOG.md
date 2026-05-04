@@ -9,9 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
-## [0.2.0] - 2026-05-04
+## [0.3.0] - 2026-05-04
 
-### Added
+### Fixed
+- **Critical Bug Fix:** Fixed an issue where the `.env` file was not being found when the `email-sender` command was run outside of the package installation directory. The package now correctly resolves the terminal's current working directory.
+
+### Features same as before 0.2.0 release
 - CSV-based recipient management (`data/contacts.csv`).
 - HTML template personalisation with Jinja2 (`{{name}}` placeholders).
 - Support for plain text along with HTML (MIME multipart/alternative).

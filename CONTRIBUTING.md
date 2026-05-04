@@ -26,7 +26,7 @@ python -m venv venv
 source venv/bin/activate  # Windows: venv\Scripts\activate
 
 # 3. Install in editable mode with dev tools
-pip install -e ".[dev]"
+pip install -e .
 
 # 4. Set up your environment variables
 cp .env.example .env

@@ -21,7 +21,7 @@ A beginner-friendly tool to easily send automated, personalized bulk emails usin
 When you set up this tool, your project folder will look like this:
 
 ```text
-email-sender-automation/
+your_folder_name/
 ├── .env                      # 🔐 Your secret Gmail credentials (never share this!)
 ├── data/
 │   ├── contacts.csv          # 👥 The list of people RECEIVING your emails
@@ -45,8 +45,8 @@ pip install email-sender-automation
 Create a new folder for your email project. Inside that folder, create two sub-folders named `data` and `output`.
 
 ```bash
-mkdir email-sender-automation
-cd email-sender-automation
+mkdir your_folder_name
+cd your_folder_name
 mkdir data output
 ```
 
